@@ -1,5 +1,5 @@
 # Python实现“我去图书馆”明日预约以及实时预约   
-*本项目灵感来自于wheee和RenjiaLu（虽然dalao并没有怎么理我）*
+*本项目灵感来自于wheee和RenjiaLu（虽然dalao并没有怎么理我）*    
 **本项目使用fiddler手动抓包获得的数据，以及Python的request库，自动化图书馆自习室的明日预约和实时预约操作，目前实测能够在武汉体育体院完美运行。**
 【操作过程】  
 1.提前半个小时使用fiddler抓取登录公众号时的cookies    
