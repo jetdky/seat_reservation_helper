@@ -1,2 +1,9 @@
-# I-go-to-the-library
-It can be used in Wuhan Institute of Physical Education
+# Python实现我去图书馆明日预约以及实时预约   
+本项目使用使用fiddler手动抓包获得的数据，以及Python的request库，自动化图书馆自习室的明日预约和实时预约操作，目前实测能够在武汉体育体院完美运行。  
+操作过程：  
+1.提前半个小时使用fiddler抓取登录公众号时的cookies    
+2.在代码中填上自己的cookies    
+3.在代码中填上自己想预定的自习室和座位号   
+4.运行代码    
+
+
