@@ -207,6 +207,7 @@ def login_in_and_reserve_seat_tomorrow(headers, cookies, ROOMID, SEATID):
         elif(response.text.find("被人预定") > 0):
             print("该座位已经被人预订了\n")
             return False
+      
 if __name__ == '__main__':
     judge = input("预约输入1， 明日预约输入2\n")
     if("1" == judge):
