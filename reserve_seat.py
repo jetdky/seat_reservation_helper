@@ -1,17 +1,16 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 #@revenge_time.py
-#@origin:wheee && RenjiaLu
 #@recoder:Jetdky
 #@time:2018-10-03
 
 
-
+# 原理：抓包分析预约座位时发送的http请求，通过Python模拟当前用户发送请求
 import requests
 import time
 from datetime import date, datetime
-#自抓取
-WECHATSESS_ID = "2a43218267d8e4611f155add923f8787"
+#自己抓取微信唯一标识
+WECHATSESS_ID = "**********"
 HM_LVT = "1538557699"
 
 headers = {
@@ -29,6 +28,7 @@ cookies = dict(
     wechatSESS_ID = WECHATSESS_ID
 )
 
+# 所在自习室的座位坐标
 class Jetdky:
     R2_SEAT={
         '192':'28,13',
@@ -155,7 +155,7 @@ class Jetdky:
     def __init__(self):
         pass
 
-
+# 预定当日座位
 def login_in_and_reserve_seat(headers, cookies, ROOMID, SEATID):
     student = Jetdky()
     roomval = student.ROOM["ROOM_2" if ROOMID == "2" else "ROOM_3" ]
@@ -181,6 +181,7 @@ def login_in_and_reserve_seat(headers, cookies, ROOMID, SEATID):
         elif(response.text.find("被人预定") > 0):
             print("该座位已经被人预订了\n")
             return False
+# 预定明日座位
 def login_in_and_reserve_seat_tomorrow(headers, cookies, ROOMID, SEATID):
     student = Jetdky()
     roomval = student.ROOM["ROOM_2" if ROOMID == "2" else "ROOM_3" ]
@@ -207,7 +208,7 @@ def login_in_and_reserve_seat_tomorrow(headers, cookies, ROOMID, SEATID):
         elif(response.text.find("被人预定") > 0):
             print("该座位已经被人预订了\n")
             return False
-      
+#函数开始
 if __name__ == '__main__':
     judge = input("预约输入1， 明日预约输入2\n")
     if("1" == judge):
